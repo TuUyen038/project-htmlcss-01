@@ -1,6 +1,10 @@
 * {
     box-sizing: border-box;
 }
+html,
+body {
+    scroll-behavior: smooth;
+}
 html {
     font-size: 62.5%;
     --primary-color: #0f1b4c;
@@ -44,17 +48,20 @@ a {
     */
 }
 /* ============ header =============  */
-.fixed-header{
+.fixed-header {
     background: #e6f0ff;
     padding-top: 26px;
     position: sticky;
-    top:-26px;
+    top: -26px;
     z-index: 1;
 }
 .hero-wrap {
     position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     background: #e6f0ff;
-    height: 100vh;
+    height: calc(100vh - 90px);
 }
 .navbar {
     display: flex;
@@ -90,27 +97,24 @@ a {
 
 /*  ========= hero ============= */
 
-.hero {
-    padding-top: 130px;
-}
-.hero .info {
+.hero-wrap .info {
     width: 51%;
 }
-.hero .sub-title {
+.hero-wrap .sub-title {
     font-weight: 500;
     font-size: 1.8rem;
     line-height: 1.5;
     letter-spacing: 0.01em;
     color: #687690;
 }
-.hero .title {
+.hero-wrap .title {
     font-weight: 700;
     font-size: 6.2rem;
     line-height: 1.19;
     color: #000336;
     margin-top: 8px;
 }
-.hero .desc {
+.hero-wrap .desc {
     margin-top: 30px;
     font-weight: 400;
     font-size: 1.8rem;
@@ -150,16 +154,15 @@ a {
     justify-content: space-between;
     align-items: center;
 }
-.clients .logos a{
+.clients .logos a {
     display: flex;
     align-items: center;
     height: 90px;
     padding: 0 42px;
     border-radius: 12px;
-    
 }
-.clients .logos a:hover{
-    box-shadow: 0px 10px 20px rgba(0,0,0,0.1);
+.clients .logos a:hover {
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.1);
 }
 .guides {
     margin-top: 40px;
@@ -408,9 +411,9 @@ a {
     background: #e9e9e9;
 }
 .stats .avatar-group {
-    display: flex; 
+    display: flex;
 }
-.stats .avatar-block{
+.stats .avatar-block {
     margin-top: 26px;
     display: flex;
     gap: 16px 14px;
@@ -422,7 +425,7 @@ a {
     border-radius: 50%;
     margin-left: -3px;
     /*no la avatar thi nen cho cover vao, vua lap day khung vua k meo anh*/
-    object-fit: cover;    
+    object-fit: cover;
     /*muon thay mau cac avatar nhanh hon thi dat bien mau cho nay, sau do css inline cho cac cai kia de doi mau*/
     background: var(--bgr-color, #fff);
     color: #fff;
@@ -435,91 +438,94 @@ a {
     font-size: 0.7rem;
     letter-spacing: -0.02rem;
 }
-.stats .avatar:first-child{
+.stats .avatar:first-child {
     margin-left: 0;
 }
-.stats .row-qty{
+.stats .row-qty {
     margin-top: 110px;
     justify-content: space-between;
     padding: 0 32px;
 }
-.stats .qty{
+.stats .qty {
     font-weight: 600;
     font-size: 6.4rem;
     color: #000000;
 }
-.stats .qty-desc{
+.stats .qty-desc {
     margin-top: 24px;
     font-weight: 500;
     font-size: 1.8rem;
-    color: #7b8087;   
+    color: #7b8087;
 }
 /* ========== Subscription ============ */
-.subscription{
-margin-top: 90px;
+.subscription {
+    margin-top: 90px;
 }
-.subscription .body{
+.subscription .body {
     position: relative;
     height: 370px;
     background: #063183;
     border-radius: 20px;
-display: flex;
-align-items: center;
+    display: flex;
+    align-items: center;
 }
-.subscription .info{
+.subscription .info {
     width: 671px;
     max-width: 100%;
     padding: 0 80px;
 }
-.subscription .sub-title{
+.subscription .sub-title {
     font-weight: 600;
     font-size: 3.5rem;
     line-height: 1.5;
-    color: #ffffff;    
+    color: #ffffff;
 }
-.subscription .desc{
+.subscription .desc {
     margin-top: 15px;
     font-weight: 400;
     font-size: 1.6rem;
     line-height: 1.88;
     color: #ffffff;
-    opacity: 0.75;    
+    opacity: 0.75;
 }
-.subscription .btn{
+.subscription .btn {
     min-width: 151px;
     background: #fff;
     color: #002366;
     margin-top: 20px;
 }
-.subscription .image{
+.subscription .image {
     position: absolute;
     bottom: 0;
     right: 221px;
 }
 /* ============= Footer ============= */
-.footer{
+.footer {
     margin-top: 55px;
     padding: 50px 0px 58px;
 }
-.footer .row{
+.footer .row {
     display: flex;
 }
-.footer .row-top{/*=========*/
+.footer .row-top {
+    /*=========*/
     column-gap: 185px;
 }
-.footer .heading{
+.footer .heading {
     font-family: "Lato", sans-serif;
     font-weight: 700;
     font-size: 2rem;
     color: #1c1c1d;
 }
-.footer .list, .footer .desc{
+.footer .list,
+.footer .desc {
     margin-top: 42px;
 }
-.footer .item{
+.footer .item {
     margin-top: 18px;
 }
-.footer .item a, .footer .desc{
+.footer .item a,
+.footer .desc {
     font-weight: 400;
     font-size: 1.6rem;
     color: #7a7a7e;
@@ -530,11 +536,11 @@ align-items: center;
     white-space: normal;
     line-height: 1.75;
 }
-.footer .social{
+.footer .social {
     display: flex;
     margin-top: 40px;
 }
-.footer .social-link{
+.footer .social-link {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -543,18 +549,18 @@ align-items: center;
     border-radius: 3px;
     background: #f9f9f9;
 }
-.footer .social-link + .social-link{
+.footer .social-link + .social-link {
     margin-left: 16px;
 }
-.footer .social-link:hover{
+.footer .social-link:hover {
     background: #ebebeb;
 }
-.footer .row-bottom{
+.footer .row-bottom {
     margin-top: 81px;
     justify-content: space-between;
     align-items: center;
 }
-.footer .copyright{
+.footer .copyright {
     font-weight: 400;
     font-size: 1.4rem;
     color: #c2c2c2;
